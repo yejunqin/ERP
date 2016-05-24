@@ -9,11 +9,11 @@ export default function(router){
     },
     '/test': {
       name: 'test',
-      component: require('./components/test.vue')
+      component: require('./pages/test.vue')
     },
     '/hello': {
       name: 'hello',
-      component: require('./components/Hello.vue')
+      component: require('./pages/Hello.vue')
     }
   })
 }

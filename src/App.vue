@@ -1,7 +1,6 @@
 <template>
   <div id="app">
     <img class="logo" src="./assets/logo.png">
-    <!--<hello></hello>-->
     <a v-link="{name: 'test'}" class="link">跳转到test</a>
     <a v-link="{name: 'hello'}" class="link">跳转到hello</a>
     <p>hi</p>
@@ -9,14 +8,21 @@
   </div>
 </template>
 
-<script>
+<script type="text/ecmascript-6">
 //import Hello from './components/Hello'
 
 export default {
 //  components: {
 //    Hello
 //  },
-  replace: false
+  replace: false,
+  data: function(){
+    return {
+      indexInfo: {
+        num: Math.random()
+      }
+    }
+  }
 }
 </script>
 
