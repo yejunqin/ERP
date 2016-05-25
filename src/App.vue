@@ -1,12 +1,93 @@
 <template>
   <div id="app">
-    <img class="logo" src="./assets/logo.png">
-    <a v-link="{name: 'test'}" class="link">跳转到test</a>
-    <a v-link="{name: 'hello'}" class="link">跳转到hello</a>
-    <p>hi</p>
+    <div class="header">
+      <ul class="menu">
+        <li>
+          <span class="lv1">库存管理</span>
+        </li>
+        <li>
+          <span class="lv1">采购管理</span>
+        </li>
+        <li>
+          <span class="lv1">综合查询</span>
+          <ul class="sub-menu">
+            <li class="lv2"><a class="link">二级菜单</a></li>
+            <li class="lv2"><a class="link">二级菜单</a></li>
+            <li class="lv2"><a class="link">二级菜单</a></li>
+          </ul>
+        </li>
+        <li>
+          <span class="lv1">商品管理</span>
+          <ul class="sub-menu">
+            <li class="lv2"><a v-link="{name: 'baseOption'}" class="link">配件基本属性</a></li>
+            <li class="lv2"><a v-link="{name: 'test'}" class="link">test</a></li>
+            <li class="lv2"><a v-link="{name: 'hello'}" class="link">hello</a></li>
+          </ul>
+        </li>
+        <li>
+          <span class="lv1">统计分析</span>
+        </li>
+        <li>
+          <span class="lv1">其他</span>
+        </li>
+      </ul>
+    </div>
     <router-view></router-view>
   </div>
 </template>
+
+<style lang="less" rel="stylesheet/less">
+  @import "variables";
+  html {
+    height: 100%;
+    background-color: @lightGray;
+  }
+
+  #app {
+    width:100%;
+    font-size:14px;
+    font-family: Microsoft Yahei, Arial, san-serif, serif;
+    .header{
+      height:40px;
+      line-height:40px;
+      background-color: @purple;
+      color: @font-white;
+      .menu{
+        float: right;
+        li{
+          list-style-type: none;
+        }
+        &>li{
+          position: relative;
+          float: left;
+          margin-right: 20px;
+          cursor: pointer;
+          .sub-menu{
+            position: absolute;
+            display: none;
+            width:120px;
+            background-color: @purple + #111;
+            .lv2{
+              cursor: pointer;
+              height:26px;
+              line-height:26px;
+              &:hover{
+                background-color: @purple + #222;
+              }
+            }
+            .link{
+              color: @font-white;
+              padding-left: 4px;
+            }
+          }
+          &:hover .sub-menu{
+            display: block;
+          }
+        }
+      }
+    }
+  }
+</style>
 
 <script type="text/ecmascript-6">
 //import Hello from './components/Hello'
@@ -25,34 +106,3 @@ export default {
   }
 }
 </script>
-
-<style>
-html {
-  height: 100%;
-}
-
-body {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  height: 100%;
-}
-
-#app {
-  color: #2c3e50;
-  margin-top: -100px;
-  max-width: 600px;
-  font-family: Source Sans Pro, Helvetica, sans-serif;
-  text-align: center;
-}
-
-#app a {
-  color: #42b983;
-  text-decoration: none;
-}
-
-.logo {
-  width: 100px;
-  height: 100px
-}
-</style>

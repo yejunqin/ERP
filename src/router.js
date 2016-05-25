@@ -14,6 +14,10 @@ export default function(router){
     '/hello': {
       name: 'hello',
       component: require('./pages/Hello.vue')
+    },
+    '/stockManage/baseOption': {
+      name: 'baseOption',
+      component: require('./pages/stockManage/baseOption.vue')
     }
   })
 }

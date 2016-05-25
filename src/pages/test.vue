@@ -1,5 +1,6 @@
 <template>
     <div class="test"><h1>{{msg}}</h1><button @click="clickTest">click</button></div>
+    <span class="testClass">abcdd</span>
 </template>
 <style rel="stylesheet/less" lang="less">
   .test{
