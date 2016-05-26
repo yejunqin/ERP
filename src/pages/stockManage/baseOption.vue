@@ -75,30 +75,95 @@
             <select id="">
               <option value="">四速流动</option>
             </select>
+            <label>订货:</label>
+            <select>
+              <option value="">台湾丰田</option>
+            </select>
+            <label>产地:</label>
+            <select>
+              <option value="">中国</option>
+            </select>
+            <label>部件:</label>
+            <select>
+              <option value="">
+                发动机件
+              </option>
+            </select>
+            <label>网点:</label>
+            <input type="text">
+            <label>尺寸:</label>
+            <select>
+              <option value="">小件</option>
+              <option value="">中件</option>
+              <option value="">大件</option>
+            </select>
+            <label>体积:</label>
+            <input type="text">
+            <label>重量:</label>
+            <input type="text">
+            <label>花冠:</label>
+            <input type="text">
+            <label>年代:</label>
+            <input type="text">
+            <label>日元价:</label>
+            <input type="text">
+            <label>美元价:</label>
+            <input type="text">
+            <label>备注:</label>
+            <input type="text">
           </div>
         </div>
-        <div class="sub-parts-modify"></div>
+        <div class="sub-parts-modify">
+          <div class="head">
+            <label>通用码:</label>
+            <input type="text">
+            <button class="normal-btn">添加</button>
+            <button class="normal-btn">移除</button>
+          </div>
+          <div class="modify-body">
+            <select>
+              <option value="">配件分类</option>
+            </select>
+          </div>
+        </div>
       </div>
+      <Test :message="msg"></Test>
     </div>
 </template>
-<style rel="stylesheet/less" lang="less">
-@import "../../base";
+<style rel="stylesheet/less" scoped lang="less">
+  @import "../../variables";
   .filter{
     margin-top: 6px;
   }
   .testClass{
     color: green;
   }
+  .main-table{
+    height:200px;
+  }
+  .parts-modify{
+    width:70%;
+    .head{
+      height:30px;
+      line-height:1;
+      border-right: 1px solid #000;
+    }
+    .modify-body{
+      //background: @extremeLightGray;
+    }
+  }
 </style>
 <script>
-    export default{
-        data(){
-            return{
-                msg:'hello vue'
-            }
-        },
-        components:{
-
-        }
+  import Test from '../test.vue'
+  export default{
+    name: 'BaseOption',
+    data(){
+      return{
+          msg:'hello vue'
+      }
+    },
+    components:{
+      Test
     }
+  }
 </script>

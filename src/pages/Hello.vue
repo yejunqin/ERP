@@ -24,6 +24,7 @@
 
 <script>
 export default {
+  name: 'Hello',
   data () {
     return {
       // note: changing this line won't causes changes

@@ -38,11 +38,14 @@
 
 <style lang="less" rel="stylesheet/less">
   @import "variables";
+  @import "base";
   html {
     height: 100%;
     background-color: @lightGray;
   }
-
+  body{
+    width:1266px;
+  }
   #app {
     width:100%;
     font-size:14px;
