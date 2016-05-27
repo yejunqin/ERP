@@ -17,7 +17,7 @@ export default function(router){
     },
     '/stockManage/baseOption': {
       name: 'baseOption',
-      component: require('./pages/stockManage/baseOption.vue')
+      component: require('./pages/baseOption.vue')
     }
   })
 }

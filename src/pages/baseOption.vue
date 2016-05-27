@@ -30,7 +30,7 @@
         </select>
         <input type="checkbox" id="hasStock">
         <label for="hasStock">有库存</label>
-        <button>查询(Q)</button>
+        <button class="blue-btn btn">查询(Q)</button>
         <button>导出</button>
         <button class="normal-btn">注册</button>
         <button class="normal-btn">标记总成</button>
@@ -44,12 +44,12 @@
           <div class="head">
             <button class="normal-btn">修改(M)</button>
             <button class="normal-btn">删除(D)</button>
-            <button class="color-btn">图片维护</button>
+            <button class="green-btn btn">图片维护</button>
             <button class="normal-btn">存储(S)</button>
             <button class="normal-btn">查销售(J)</button>
             <button class="normal-btn">查采购(H)</button>
             <input type="text" placeholder="请填写配件编号" class="parts-code-search">
-            <button class="color-btn red-btn">增加(A)</button>
+            <button class="btn red-btn">增加(A)</button>
             <button class="normal-btn">导入(I)</button>
           </div>
           <div class="modify-body">
@@ -119,6 +119,7 @@
             <input type="text">
             <button class="normal-btn">添加</button>
             <button class="normal-btn">移除</button>
+            <!--<v-btn color="green">移除</v-btn>-->
           </div>
           <div class="modify-body">
             <select>
@@ -131,7 +132,7 @@
     </div>
 </template>
 <style rel="stylesheet/less" scoped lang="less">
-  @import "../../variables";
+  @import "../variables";
   .filter{
     margin-top: 6px;
   }
@@ -154,7 +155,39 @@
   }
 </style>
 <script>
-  import Test from '../test.vue'
+  import Test from './test.vue'
+  import vTable from '../components/v-table.vue'
+  const dataSource = [
+    {
+      "partsCode": 123456,
+      "partsName": "发动机",
+      "carType": "ipz-127",
+      "engine": "zze"
+    },
+    {
+      "partsCode": 123456,
+      "partsName": "发动机",
+      "carType": "ipz-127",
+      "engine": "zze"
+    }
+  ]
+  const columns = [
+    {
+      title: '配件编码',
+      dataIndex: 'partsCode'
+    },
+    {
+      title: '配件名称',
+      dataIndex: 'partsName'
+    },
+    {
+      title: '车型',
+      dataIndex: 'carType'
+    },{
+      title: '发动机',
+      dataIndex: 'engine'
+    }
+  ]
   export default{
     name: 'BaseOption',
     data(){
@@ -163,7 +196,8 @@
       }
     },
     components:{
-      Test
+      Test,
+      vTable
     }
   }
 </script>
