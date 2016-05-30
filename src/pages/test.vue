@@ -23,36 +23,39 @@
         }
       },
       props: ['message'],
-        methods: {
-          clickTest(){
-            console.log(this);
-          },
-          promiseTest(num){
-            return new Promise((resolve, reject) => {
-              console.log('setting promise')
-              setTimeout(() => {
-                if(num){
-                  resolve(num);
-                }else{
-                  reject('error');
-                }
-              }, 1500)
-            })
-          }
+      methods: {
+        clickTest(){
+          console.log(this);
         },
-        route: {
-          data(to){
-            console.log('load');
-            console.log(to);
-            this.promiseTest(3).then((data) => {
-              console.log(data);
-            }, (error) => {
-              console.log(error);
-            });
-            return{
-              list: [Math.random()]
-            }
+        promiseTest(num){
+          return new Promise((resolve, reject) => {
+            console.log('setting promise')
+            setTimeout(() => {
+              if(num){
+                resolve(num);
+              }else{
+                reject('error');
+              }
+            }, 1500)
+          })
+        }
+      },
+      created(){
+
+      },
+      route: {
+        data(to){
+          console.log('load');
+          console.log(to);
+          this.promiseTest(3).then((data) => {
+            console.log(data);
+          }, (error) => {
+            console.log(error);
+          });
+          return{
+            list: [Math.random()]
           }
         }
+      }
     }
 </script>

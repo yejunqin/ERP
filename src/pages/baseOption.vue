@@ -198,6 +198,14 @@
     components:{
       Test,
       vTable
+    },
+    created(){
+
+    },
+    ready(){
+      const hasStock = document.getElementById('hasStock')
+      console.log(hasStock)
+      console.log($)
     }
   }
 </script>

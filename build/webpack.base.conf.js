@@ -1,6 +1,7 @@
 var path = require('path')
 var config = require('../config')
 var utils = require('./utils')
+var webpack = require('webpack')
 var projectRoot = path.resolve(__dirname, '../')
 
 module.exports = {
@@ -13,7 +14,7 @@ module.exports = {
     filename: '[name].js'
   },
   resolve: {
-    extensions: ['', '.js', '.vue'],
+    extensions: ['', '.js', '.vue', 'min.js'],
     fallback: [path.join(__dirname, '../node_modules')],
     alias: {
       'src': path.resolve(__dirname, '../src'),
@@ -66,6 +67,13 @@ module.exports = {
       }
     ]
   },
+  plugins:[
+    new webpack.ProvidePlugin({
+      $: "jquery",
+      jQuery: "jquery",
+      "window.jQuery": "jquery"
+    })
+  ],
   vue: {
     loaders: utils.cssLoaders()
   }

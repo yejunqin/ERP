@@ -94,7 +94,7 @@
 
 <script type="text/ecmascript-6">
 //import Hello from './components/Hello'
-
+console.log($)
 export default {
 //  components: {
 //    Hello
